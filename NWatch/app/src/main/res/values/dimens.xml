@@ -3,6 +3,6 @@
     <dimen name="analog_hand_stroke">5dp</dimen>
     <dimen name="analog_hand_stroke_min">3dp</dimen>
     <dimen name="analog_hand_stroke_sec">2dp</dimen>
-    <dimen name="date_text_size">14dp</dimen>
+    <dimen name="date_text_size">12dp</dimen>
     <dimen name="date_offset_y">60dp</dimen>
 </resources>

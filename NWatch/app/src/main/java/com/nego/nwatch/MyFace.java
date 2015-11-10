@@ -137,7 +137,7 @@ public class MyFace extends CanvasWatchFaceService {
             cPoints.setAntiAlias(true);
 
             mTextPaint = new Paint();
-            mTextPaint.setColor(resources.getColor(R.color.analog_background_dark));
+            mTextPaint.setColor(resources.getColor(R.color.analog_hands));
             mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL));
             mTextPaint.setAntiAlias(true);
             mTextPaint.setTextSize(resources.getDimension(R.dimen.date_text_size));
@@ -198,8 +198,8 @@ public class MyFace extends CanvasWatchFaceService {
 
             if (!mAmbient) {
                 Calendar c = Calendar.getInstance();
-                String text = String.format("%d %s", c.get(Calendar.DAY_OF_MONTH), c.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.getDefault()));
-                canvas.drawText(text, bounds.centerX(), bounds.height() - getResources().getDimension(R.dimen.date_offset_y), mTextPaint);
+                String text = String.format("%s %d", c.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.getDefault()).toUpperCase(), c.get(Calendar.DAY_OF_MONTH));
+                canvas.drawText(text, centerX, centerY + (float) -Math.cos((float) Math.PI / 4 * 3) * (centerY - 10), mTextPaint);
             }
 
 
